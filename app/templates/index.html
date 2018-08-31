@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% import "bootstrap/wtf.html" as wtf %} {% block title %}F L A R E{% endblock %} {% block page_content
+%}
+<div class="container-fluid">
+  <div id="top-div" class="row half px-2">
+    <div id="top-frame" class="col text-center loadinggif p-2">
+      <iframe id="i-top" src="" width="100%" height="100%"></iframe>
+    </div>
+  </div>
+  <div id="bottom-div" class="row half px-2">
+    <div id="lower-left" class="col np p-2 loadinggif">
+      <iframe id="i-left" src="" width="100%" height="100%"></iframe>
+    </div>
+    <div id="lower-right" class="col np p-2 loadinggif">
+      <iframe id="i-right" src="" width="100%" height="100%"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">#exampleModal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-2">
+        <div class="modal-iframe" width="100%" height="100%">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col loadinggif p-2" id="oml">
+                <iframe class="modal-iframe" src="" width="100%" height="100%"></iframe>
+              </div>
+              <div class="col loadinggif p-2" id="omr">
+                <iframe class="modal-iframe" src="" width="100%" height="100%"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br> {% endblock %} {% block scripts %} {{ super() }} {% endblock %}

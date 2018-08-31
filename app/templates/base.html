@@ -1,0 +1,796 @@
+{% extends "bootstrap/base.html" %}{% import "bootstrap/wtf.html" as wtf %}{% block title %}P U L S E{% endblock %} {% block
+head %}
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script type="text/javascript">
+  window.NREUM || (NREUM = {}), __nr_require = function (e, t, n) { function r(n) { if (!t[n]) { var o = t[n] = { exports: {} }; e[n][0].call(o.exports, function (t) { var o = e[n][1][t]; return r(o || t) }, o, o.exports) } return t[n].exports } if ("function" == typeof __nr_require) return __nr_require; for (var o = 0; o < n.length; o++)r(n[o]); return r }({ 1: [function (e, t, n) { function r() { } function o(e, t, n) { return function () { return i(e, [f.now()].concat(u(arguments)), t ? null : this, n), t ? void 0 : this } } var i = e("handle"), a = e(2), u = e(3), c = e("ee").get("tracer"), f = e("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"], d = "api-", l = d + "ixn-"; a(p, function (e, t) { s[t] = o(d + t, !0, "api") }), s.addPageAction = o(d + "addPageAction", !0), s.setCurrentRouteName = o(d + "routeName", !0), t.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (e, t) { var n = {}, r = this, o = "function" == typeof t; return i(l + "tracer", [f.now(), e, n], r), function () { if (c.emit((o ? "" : "no-") + "fn-start", [f.now(), r, o], n), o) try { return t.apply(this, arguments) } catch (e) { throw c.emit("fn-err", [arguments, this, e], n), e } finally { c.emit("fn-end", [f.now()], n) } } } }; a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (e, t) { m[t] = o(l + t) }), newrelic.noticeError = function (e) { "string" == typeof e && (e = new Error(e)), i("err", [e, f.now()]) } }, {}], 2: [function (e, t, n) { function r(e, t) { var n = [], r = "", i = 0; for (r in e) o.call(e, r) && (n[i] = t(r, e[r]), i += 1); return n } var o = Object.prototype.hasOwnProperty; t.exports = r }, {}], 3: [function (e, t, n) { function r(e, t, n) { t || (t = 0), "undefined" == typeof n && (n = e ? e.length : 0); for (var r = -1, o = n - t || 0, i = Array(o < 0 ? 0 : o); ++r < o;)i[r] = e[t + r]; return i } t.exports = r }, {}], 4: [function (e, t, n) { t.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {}], ee: [function (e, t, n) { function r() { } function o(e) { function t(e) { return e && e instanceof r ? e : e ? c(e, u, i) : i() } function n(n, r, o, i) { if (!d.aborted || i) { e && e(n, r, o); for (var a = t(o), u = m(n), c = u.length, f = 0; f < c; f++)u[f].apply(a, r); var p = s[y[n]]; return p && p.push([b, n, r, a]), a } } function l(e, t) { v[e] = m(e).concat(t) } function m(e) { return v[e] || [] } function w(e) { return p[e] = p[e] || o(n) } function g(e, t) { f(e, function (e, n) { t = t || "feature", y[n] = t, t in s || (s[t] = []) }) } var v = {}, y = {}, b = { on: l, emit: n, get: w, listeners: m, context: t, buffer: g, abort: a, aborted: !1 }; return b } function i() { return new r } function a() { (s.api || s.feature) && (d.aborted = !0, s = d.backlog = {}) } var u = "nr@context", c = e("gos"), f = e(2), s = {}, p = {}, d = t.exports = o(); d.backlog = s }, {}], gos: [function (e, t, n) { function r(e, t, n) { if (o.call(e, t)) return e[t]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(e, t, { value: r, writable: !0, enumerable: !1 }), r } catch (i) { } return e[t] = r, r } var o = Object.prototype.hasOwnProperty; t.exports = r }, {}], handle: [function (e, t, n) { function r(e, t, n, r) { o.buffer([e], r), o.emit(e, t, n) } var o = e("ee").get("handle"); t.exports = r, r.ee = o }, {}], id: [function (e, t, n) { function r(e) { var t = typeof e; return !e || "object" !== t && "function" !== t ? -1 : e === window ? 0 : a(e, i, function () { return o++ }) } var o = 1, i = "nr@id", a = e("gos"); t.exports = r }, {}], loader: [function (e, t, n) { function r() { if (!x++) { var e = h.info = NREUM.info, t = d.getElementsByTagName("script")[0]; if (setTimeout(s.abort, 3e4), !(e && e.licenseKey && e.applicationID && t)) return s.abort(); f(y, function (t, n) { e[t] || (e[t] = n) }), c("mark", ["onload", a() + h.offset], null, "api"); var n = d.createElement("script"); n.src = "https://" + e.agent, t.parentNode.insertBefore(n, t) } } function o() { "complete" === d.readyState && i() } function i() { c("mark", ["domContent", a() + h.offset], null, "api") } function a() { return E.exists && performance.now ? Math.round(performance.now()) : (u = Math.max((new Date).getTime(), u)) - h.offset } var u = (new Date).getTime(), c = e("handle"), f = e(2), s = e("ee"), p = window, d = p.document, l = "addEventListener", m = "attachEvent", w = p.XMLHttpRequest, g = w && w.prototype; NREUM.o = { ST: setTimeout, SI: p.setImmediate, CT: clearTimeout, XHR: w, REQ: p.Request, EV: p.Event, PR: p.Promise, MO: p.MutationObserver }; var v = "" + location, y = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1071.min.js" }, b = w && g && g[l] && !/CriOS/.test(navigator.userAgent), h = t.exports = { offset: u, now: a, origin: v, features: {}, xhrWrappable: b }; e(1), d[l] ? (d[l]("DOMContentLoaded", i, !1), p[l]("load", r, !1)) : (d[m]("onreadystatechange", o), p[m]("onload", r)), c("mark", ["firstbyte", u], null, "api"); var x = 0, E = e(4) }, {}] }, {}, ["loader"]);
+  ; NREUM.info = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", licenseKey: "fbd2e57ca0", applicationID: "139999755", sa: 1 }
+</script>
+
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+  crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='FLARE.css') }}">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon-32x32.png') }}" type="image/png">
+<link rel="icon" href="{{ url_for('static', filename='favicon-32x32.png') }}" type="image/png">
+
+<title>F L A R E</title>
+
+{% endblock %} {% block navbar %}
+<div class="container-fullwidth">
+  <nav class="navbar navbar-expand-xxl navbar-dark bg-light p-2 mb-2">
+    <img src="{{ url_for('static', filename='OpsCenterIcon.png') }}" type="image/png" width="40" height="40" class="d-inline-block align-top"
+      alt=" ">
+    <a class="no-decoration" href="/">
+      <span class="pulse_title ml-1 mr-4">FLARE</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#aModal" onclick="show_a_iframe()">a Modal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#bModal" onclick="show_b_iframe()">b Modal</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Dashboards</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#cModal" onclick="show_c_iframe()">c Modal</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#dModal" onclick="show_d_iframe()">d Modal</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#eModal" onclick="show_e_iframe()">e Modal</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#fModal" onclick="show_f_iframe()">f Modal</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" data-toggle="modal" data-target="#gModal" onclick="show_g_iframe()">g Modal</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Dashboards2</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#hModal" onclick="show_h_iframe()">h Graphs</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#iModal" onclick="show_i_iframe()">i Modal</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Dshboards3</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#jModal" onclick="show_j_iframe()">j Modal </a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#kModal" onclick="show_k_iframe()">k Modal</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#lModal" onclick="show_l_iframe()">l Modal</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#mModal" onclick="show_m_iframe()">m Modal</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#nModal" onclick="show_n_iframe()">n Modal</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Dashboards4</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#oModal" onclick="show_o_iframe()">o Modal</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#pModal" onclick="show_p_iframe()">p Modal</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Bookmarks</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item btn-flare" href="https://example.example.com/display/OPS/FLARE+Bookmarks%3A+Adding+and+Deleting"
+              target="_blank">Add/Remove Bookmark</a>
+            {{ emptystring|safe }}
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" data-toggle="modal" data-target="#qModal" onclick="show_q_iframe()">q Modal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" data-toggle="modal" data-target="#rModal" onclick="show_r_iframe()">r Modal</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" onsubmit="return false">
+        <ul class="navbar-nav mr-auto">
+          <li>
+            <div class="input-group ml-2">
+              <input type="text" class="form-control" placeholder="Situation ID" aria-label="Situation ID" id="sitn_box" autofocus>
+              <div class="input-group-append">
+                <a class="btn btn-flare my-2 my-sm-0" onclick="opsmodal($('#sitn_box')[0].value)">Open</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="false"
+                aria-expanded="false">
+                <i class="material-icons">menu</i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#docModal" onclick="show_documentation_iframe()">Documentation</a>
+                <a class="dropdown-item" href="arnoalfordemail@email.com">Submit Feedback</a>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#troubleshootModal">Troubleshooting</a>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#instructionsModal">Instructions</a>
+                <a class="dropdown-item" href="#" data-toggle="modal" id="login_btn" data-target="#loginModal" data>Preferences</a>
+              </div>
+            </li>
+
+          </li>
+        </ul>
+      </form>
+    </div>
+  </nav>
+</div>
+
+
+
+<!-- a Modal -->
+<div class="modal fade" id="aModal" tabindex="-1" role="dialog" aria-labelledby="aModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aModalLabel">a Modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="a_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- c Modal -->
+<div class="modal fade" id="cModal" tabindex="-1" role="dialog" aria-labelledby="cModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cModalLabel">c Modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="c_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- d Modal -->
+<div class="modal fade" id="dModal" tabindex="-1" role="dialog" aria-labelledby="dModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dModalLabel">d Modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="d_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- e Modal -->
+<div class="modal fade" id="eModal" tabindex="-1" role="dialog" aria-labelledby="eModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eModalLabel">e Modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="e_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- f Modal -->
+<div class="modal fade" id="fModal" tabindex="-1" role="dialog" aria-labelledby="fModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="fModalLabel">f Modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="f_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- h Dashboard Modal -->
+<div class="modal fade" id="iModal" tabindex="-1" role="dialog" aria-labelledby="iModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="iModalLabel">h Status Dashboards</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="i_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- h Modal -->
+<div class="modal fade" id="hModal" tabindex="-1" role="dialog" aria-labelledby="hModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="hModalLabel">h Graphs</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="h_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- o  Modal -->
+<div class="modal fade" id="oModal" tabindex="-1" role="dialog" aria-labelledby="oModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="oModalLabel">o Graphs</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="o_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Documentation  Modal -->
+<div class="modal fade" id="docModal" tabindex="-1" role="dialog" aria-labelledby="docModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="docModalLabel">Flare Documentation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="documentation_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- p Modal -->
+<div class="modal fade" id="pModal" tabindex="-1" role="dialog" aria-labelledby="pModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pModalLabel">p Graphs</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="p_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- g Modal -->
+<div class="modal fade" id="gModal" tabindex="-1" role="dialog" aria-labelledby="gModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="gModalLabel">g Graphs</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="g_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- b Modal -->
+<div class="modal fade" id="bModal" tabindex="-1" role="dialog" aria-labelledby="bModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bModalLabel"> b Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="b_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- j Modal -->
+<div class="modal fade" id="jModal" tabindex="-1" role="dialog" aria-labelledby="jModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="jModalLabel">j Modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="j_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- k Modal -->
+<div class="modal fade" id="kModal" tabindex="-1" role="dialog" aria-labelledby="kModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="kModalLabel">k Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="k_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- l  Modal -->
+<div class="modal fade" id="lModal" tabindex="-1" role="dialog" aria-labelledby="lModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="lModalLabel">l Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="l_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- m  Modal -->
+<div class="modal fade" id="mModal" tabindex="-1" role="dialog" aria-labelledby="mModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mModalLabel">m Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="m_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- n Modal -->
+<div class="modal fade" id="nModal" tabindex="-1" role="dialog" aria-labelledby="nModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nModalLabel">n Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="n_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- q Modal -->
+<div class="modal fade" id="qModal" tabindex="-1" role="dialog" aria-labelledby="qModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="qModalLabel">q Modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="q_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- r Modal -->
+<div class="modal fade" id="rModal" tabindex="-1" role="dialog" aria-labelledby="rModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-lg" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rModalLabel">r Modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe" width="100%" height="100%">
+          <iframe id="r_iframe" class="modal-iframe" src="" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- {{ emptystring2|safe }} -->
+
+
+<!-- Instructions Modal -->
+<div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="instructionsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-md" role="document">
+    <div class="modal-content modal-content-md">
+      <div class="modal-header">
+        <h5 class="modal-title" id="instructionsModalLabel">Extension Installation Guide</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <div>
+            <a class="btn btn-success" href="{{ url_for('static', filename='Extensions.zip') }}" role="button">Download Extension</a>
+          </div>
+          <br>
+          <div>
+            <!--        <img src="{{ url_for('static', filename='Instructions.png') }}" type="image/png"></img> -->
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Instruction_Pics/Instructions1.png') }}" type="image/png"></img>
+            </p>
+            <p>In the chrome browser click on the three dots in the top right corner.</p>
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Instruction_Pics/Instructions2.png') }}" type="image/png"></img>
+            </p>
+            <p>Go down to More Tools and then click on Extensions.</p>
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Instruction_Pics/Instructions3.png') }}" type="image/png"></img>
+            </p>
+            <p>Enable developer mode by clicking on the slider in the top right corner.</p>
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Instruction_Pics/Instructions4.png') }}" type="image/png"></img>
+            </p>
+            <p>Extract the zip folder you got from clicking the Download Extension button.</p>
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Instruction_Pics/Instructions5.png') }}" type="image/png"></img>
+            </p>
+            <p>Drag and drop the extracted extension folder into the chrome extension page.</p>
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Instruction_Pics/Instructions6.png') }}" type="image/png"></img>
+            </p>
+            <p>Confirm that the
+              <span class="flare">FLARE</span> extension is enabled by making sure that the slider is blue and to the right on the extension
+              page. </p>
+              <span class="flare">FLARE</span>.</p>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Troubleshoot Modal -->
+<div class="modal fade" id="troubleshootModal" tabindex="-1" role="dialog" aria-labelledby="troubleshootModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-md" role="document">
+    <div class="modal-content modal-content-md">
+      <div class="modal-header">
+        <h5 class="modal-title" id="troubleshootModalLabel">If You Run Into Any Problems:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <br>
+          <div>
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Troubleshoot_Pics/Troubleshoot_Pic1.png') }}" type="image/png"></img>
+            </p>
+            <p>In the top right corner click on the
+              <span class="flare">FLARE</span> extension icon.</p>
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Troubleshoot_Pics/Troubleshoot_Pic2.png') }}" type="image/png"></img>
+            </p>
+            <p>Turn off the "enable cross-origin" slider, and turn it back on.</p>
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Troubleshoot_Pics/Troubleshoot_Pic3.jpg') }}" type="image/jpg"></img>
+            </p>
+            <p>While holding shift, press the F5 key to do a hard refresh.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- extension not installed Modal -->
+<div class="modal fade" id="extModal" tabindex="-1" role="dialog" aria-labelledby="extModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-md" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="extModalLabel">Uh oh!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <strong>Looks like either you don't have the
+            <span class="flare">FLARE</span>Chrome extension installed or it is out of date. Please follow the instructions below to fix this.</strong>
+          <br>
+          <br>
+          <div>
+            <a class="btn btn-success" href="{{ url_for('static', filename='Extensions.zip') }}" role="button">Download Extension</a>
+          </div>
+          <br>
+          <div>
+            <!--        <img src="{{ url_for('static', filename='Instructions.png') }}" type="image/png"></img> -->
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Instruction_Pics/Instructions1.png') }}" type="image/png"></img>
+            </p>
+            <p>In the chrome browser click on the three dots in the top right corner.</p>
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Instruction_Pics/Instructions2.png') }}" type="image/png"></img>
+            </p>
+            <p>Go down to More Tools and then click on Extensions.</p>
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Instruction_Pics/Instructions3.png') }}" type="image/png"></img>
+            </p>
+            <p>Enable developer mode by clicking on the slider in the top right corner.</p>
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Instruction_Pics/Instructions4.png') }}" type="image/png"></img>
+            </p>
+            <p>Extract the zip folder you got from clicking the Download Extension button.</p>
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Instruction_Pics/Instructions5.png') }}" type="image/png"></img>
+            </p>
+            <p>Drag and drop the extracted extension folder into the chrome extension page.</p>
+            <p style="float: center;">
+              <img src="{{ url_for('static', filename='Instruction_Pics/Instructions6.png') }}" type="image/png"></img>
+            </p>
+            <p>Confirm that the FLARE extension is enabled by making sure that the slider is blue and to the right on the extension
+              page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- empty Modal -->
+<div class="modal fade" id="emptyModal" tabindex="-1" role="dialog" aria-labelledby="emptyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-md" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="emptyModalLabel">&#129430;</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <iframe id="dino" src="" height="200px" width="600px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ssh Modal -->
+<div class="modal fade" id="sshModal" tabindex="-1" role="dialog" aria-labelledby="sshModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-md" role="document">
+    <div class="modal-content modal-content-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="sshModalLabel">Uh oh!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          Looks like you selected the SSH terminal frame, but you don't have the Secure Shell Extension installed! Click on the button
+          below to fix this!
+        </div>
+        <br>
+        <div class="text-center">
+          <a class="btn btn-success" href="https://chrome.google.com/webstore/detail/secure-shell-extension/iodihamcpbpeioajjeobimgagajmlibd"
+            role="button" target="_blank">Download Secure Shell Extension</a>
+        </div>
+        <br>
+        <div class="text-center">
+          Reload the page (Shift + F5) after the extension is installed.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">User preferences</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <div class="page-header">
+          <h1>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
+        </div>
+        <div>
+          {{ wtf.quick_form(form) }}
+        </div>
+        <br> -->
+        <div>
+          <!-- <h2>Select your frames</h2> -->
+          <h4>Top (wide) frame</h4>
+          <select id="top-select" class="form-control" required>
+            <option value="https://ticketing.example.com/">Ticketing</option>
+            <option value="https://alert.example.net" selected>Alert</option>
+            <option value="https://chatclient.com/spaces/new">Chat Client</option>
+            <option value="http://Monitoring/#/board/">Monitoring</option>
+            <option value="http://example/v2#/changes?columns=1">Change board (1 column)</option>
+            <option value="http://example/v2#/changes?columns=2">Change board (2 columns)</option>
+            <option value="http://example/v2#/changes?columns=3">Change board (3 columns)</option>
+            <option value="http://graphs/">D.Va</option>
+            <option value="http://liveevents/">Liveevents</option>
+            <option value="http://incidents/">Incidents</option>
+            <option value="http://dashboard/">Dashboard</option>
+            <option value="chrome-extension://iodihamcpbpeioajjeobimgagajmlibd/html/nassh.html">SSH Terminal</option>
+          </select>
+          <br>
+          <h4>Lower left frame</h4>
+          <select id="left-select" class="form-control" required>
+            <option value="https://ticketing.example.com/" selected>ticketing</option>
+            <option value="https://alert.example.net">alert</option>
+            <option value="https://chatclient.com/spaces/new">Webex for Teams</option>
+            <option value="http://Monitoring/#/board/gnoc">Monitoring</option>
+            <option value="http://example/v2#/changes?columns=1">Change board (1 column)</option>
+            <option value="http://example/v2#/changes?columns=2">Change board (2 columns)</option>
+            <option value="http://example/v2#/changes?columns=3">Change board (3 columns)</option>
+            <option value="http://graphs/">D.Va</option>
+            <option value="http://liveevents/">liveevents</option>
+            <option value="http://incidents/">Incidents</option>
+            <option value="http://dashboard/">Dashboard</option>
+            <option value="chrome-extension://iodihamcpbpeioajjeobimgagajmlibd/html/nassh.html">SSH Terminal</option>
+          </select>
+          <br>
+          <h4>Lower right frame</h4>
+          <select id="right-select" class="form-control" required>
+            <option value="https://ticketing.example.com/">ticketing</option>
+            <option value="https://alert.example.net">alert</option>
+            <option value="https://chatclient.com/spaces/new" selected>Webex for Teams</option>
+            <option value="http://Monitoring/#/board/gnoc">Monitoring</option>
+            <option value="http://example/v2#/changes?columns=1">Change board (1 column)</option>
+            <option value="http://example/v2#/changes?columns=2">Change board (2 columns)</option>
+            <option value="http://example/v2#/changes?columns=3">Change board (3 columns)</option>
+            <option value="http://graphs/">D.Va</option>
+            <option value="http://liveevents/">liveevents</option>
+            <option value="http://incidents/">Incidents</option>
+            <option value="http://dashboard/">Dashboard</option>
+            <option value="chrome-extension://iodihamcpbpeioajjeobimgagajmlibd/html/nassh.html">SSH Terminal</option>
+          </select>
+          <br>
+          <button type="button" class="btn btn-success" onclick="updateFrames();" data-dismiss="modal">Save</button>
+          <button type="button" class="btn btn-danger" onclick="resetFrames();">Reset</button>
+          <a class="btn btn-warning" href="https://tsg's.example.com/pages/viewpage.action?pageId=366186408" role="button" target="_blank">Add/Remove Frames</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block content %}
+<div class="container-fullwidth">
+  {% for message in get_flashed_messages() %}
+  <div class="alert alert-warning">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    {{ message }}
+  </div>
+  {% endfor %} {% block page_content %}{% endblock %}
+</div>
+{% endblock %} {% block scripts %} {{ super() }}
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="{{ url_for('static', filename='jquery-3.3.1.slim.min.js') }}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+  crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='FLARE.js') }}"></script> {% endblock %}
