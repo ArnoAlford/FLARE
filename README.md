@@ -1,6 +1,6 @@
 # FLARE
 ## What is F L A R E?
-__F L A R E__ is a tool built by two interns in the summer of 2018. The tool is designed to consolidate internal tools that are usually spread into dozens of tabs on each person's web browser.<br><br>
+__F L A R E__ is a tool built by two interns in the summer of 2018. The tool is designed to consolidate internal tools that are usually spread into dozens of tabs into one clean page with full functionality and zero api calls.<br><br>
 <img align="center" src="https://github.com/ArnoAlford/FLARE/blob/master/1.png">
 
 [Link to Full Screenshot](https://raw.githubusercontent.com/ArnoAlford/FLARE/master/1.png)
