@@ -14,3 +14,7 @@ __F L A R E__ is built on Python, Flask, and MySQL for the back-end, and HTML, C
 <img align="center" src="https://github.com/ArnoAlford/FLARE/blob/master/3.PNG">
 
 [Link to Full Screenshot](https://raw.githubusercontent.com/ArnoAlford/FLARE/master/3.PNG)
+## How is F L A R E kept alive?
+Being an intern project, we knew from the start that we would not always be there to support __F L A R E__. So a big push was made to make clean, clear, and stright to the point documentation that allowed additional features and tools to be added in the future.<br><br>
+<img align="center" src="https://github.com/ArnoAlford/FLARE/blob/master/4.PNG">
+[Link to Full Screenshot](https://raw.githubusercontent.com/ArnoAlford/FLARE/master/4.PNG)
